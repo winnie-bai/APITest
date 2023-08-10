@@ -1,0 +1,8 @@
+env: https://work.weixin.qq.com/
+db_config:
+  host: 192.168.254.128
+  port: 3306
+  user: winnie
+  password: '123456'
+  database: test_db
+  charset: utf8mb4

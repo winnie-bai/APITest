@@ -1,0 +1,3 @@
+[2023-08-10 16:56:47] [DEBUG] [base_api.py]/[line: 28]/[send] https://work.weixin.qq.com/wework_admin/party?action=addparty请求响应结果为{'data': {'party': {'partyid': '1688858335517752', 'openapi_partyid': '8', 'name': '创建部门名称', 'parentid': '1688855106488662', 'disp_order': 99994000, 'pinyinname': '', 'islocked': False}}} 
+[2023-08-10 16:56:47] [DEBUG] [base_api.py]/[line: 28]/[send] https://work.weixin.qq.com/wework_admin/party?action=setparty请求响应结果为{'data': {}} 
+[2023-08-10 16:56:48] [DEBUG] [base_api.py]/[line: 28]/[send] https://work.weixin.qq.com/wework_admin/party?action=delparty请求响应结果为{'data': {}} 
