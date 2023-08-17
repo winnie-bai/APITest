@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        label 'ubuntu'
+        label 'Linux'
     }
     stages{
         stage('api_test') {
