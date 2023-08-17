@@ -3,12 +3,31 @@ pipeline{
         label 'Linux'
     }
     stages{
-        stage('api_test') {
+        stage('build env') {
             steps {
+                 build 'main_job'
+            }
+        }
+        stage('wait'){
+            steps{
+                waitUntil(initialRecurrencePeriod: 3000) {
+                    script {
+                        def r = sh script: 'curl http://www.baidu.com', returnStatus: true
+                        return (r == 0)
+                    }
+                }
+            }
+        }
+        stage('api_test') {
+            steps('run test') {
                 sh '''cd $WORKSPACE
                       python3 -m pip install -r requirements.txt
                       python3 run.py'''
+            }
+            steps('generate report'){
                 allure includeProperties: false, jdk: '', results: [[path: '$WORKSPACE/allure-results']]
+            }
+            steps('archiveArtifacts'){
                 archiveArtifacts artifacts: 'logs/*', followSymlinks: false
             }
         }
