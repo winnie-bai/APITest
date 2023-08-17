@@ -23,11 +23,7 @@ pipeline{
                 sh '''cd $WORKSPACE
                       python3 -m pip install -r requirements.txt
                       python3 run.py'''
-            }
-            steps('generate report'){
                 allure includeProperties: false, jdk: '', results: [[path: '$WORKSPACE/allure-results']]
-            }
-            steps('archiveArtifacts'){
                 archiveArtifacts artifacts: 'logs/*', followSymlinks: false
             }
         }
