@@ -66,7 +66,7 @@ pipeline{
                 </table>
             </body>
             </html>
-            ''', subject: '【${PROJECT_NAME}】pipeline自动化测试报告', to: 'winnie20150701@outlook.com'
+            ''',mimeType: 'text/html', subject: '【${PROJECT_NAME}】pipeline自动化测试报告', to: 'winnie20150701@outlook.com'
         }
     }
 }
